@@ -22,16 +22,16 @@
 
 
         public Mulher () { }
-        public Mulher(int mulherID, string? nome, string? email, string? senha, int cpf, int telefone, int enderecoID, Endereco? endereco)
-        {
-            MulherID = mulherID;
-            Nome = nome;
-            Email = email;
-            Senha = senha;
-            Cpf = cpf;
-            Telefone = telefone;
-            EnderecoID = enderecoID;
-            Endereco = endereco;
-        }
+        //public Mulher(int mulherID, string? nome, string? email, string? senha, int cpf, int telefone, int enderecoID, Endereco? endereco)
+        //{
+        //    MulherID = mulherID;
+        //    Nome = nome;
+        //    Email = email;
+        //    Senha = senha;
+        //    Cpf = cpf;
+        //    Telefone = telefone;
+        //    EnderecoID = enderecoID;
+        //    Endereco = endereco;
+        //}
     }
 }

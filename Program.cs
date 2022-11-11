@@ -1,7 +1,21 @@
+using GlobalSolution_Polaris.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllers();
+
+builder.Services.AddDbContext<MulherApiDbContext>(options =>
+{
+    options.UseOracle(
+        builder.Configuration["ConnectionStrings:MulherApiDbContextConnection"]);
+});
+
+builder.Services.AddScoped<IMulherRepository, MulherRepository>();
+
 
 var app = builder.Build();
 
