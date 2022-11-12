@@ -19,5 +19,7 @@ namespace GlobalSolution_Polaris.Models
 
         public DbSet<Estado> Estados { get; set; }
 
+        public DbSet<LocalEscolhido> LocaisEscolhidos { get; set; }
+
     }
 }

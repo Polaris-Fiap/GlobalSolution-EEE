@@ -14,15 +14,15 @@
         //Relacionamento Endereco
         public List<Endereco>? Enderecos { get; set; }
 
-        public Bairro () { }
+        //public Bairro () { }
 
-        public Bairro(int bairroID, string? nomeBairro, int cidadeID, Cidade? cidade, List<Endereco>? enderecos)
-        {
-            BairroID = bairroID;
-            NomeBairro = nomeBairro;
-            CidadeID = cidadeID;
-            Cidade = cidade;
-            Enderecos = enderecos;
-        }
+        //public Bairro(int bairroID, string? nomeBairro, int cidadeID, Cidade? cidade, List<Endereco>? enderecos)
+        //{
+        //    BairroID = bairroID;
+        //    NomeBairro = nomeBairro;
+        //    CidadeID = cidadeID;
+        //    Cidade = cidade;
+        //    Enderecos = enderecos;
+        //}
     }
 }

@@ -13,25 +13,25 @@
         public string? DescricaoComplemento { get; set; }
 
         //Relacionamento bairro
-        public int BairroID { get; set; }
+        //public int BairroID { get; set; }
 
-        public virtual Bairro? Bairros { get; set; }
+        //public virtual Bairro? Bairros { get; set; }
 
         //Relacionamento mulher
-        public List<Mulher>? Mulheres { get; set; }
+        public List<Mulher> MulheresRel { get; set; }
 
-        public Endereco () { }
+        //public Endereco () { }
 
-        public Endereco(int enderecoID, int cep, string? nomeRua, int numeroRua, string? descricaoComplemento, int bairroID, Bairro? bairros, List<Mulher>? mulheres)
-        {
-            EnderecoID = enderecoID;
-            Cep = cep;
-            NomeRua = nomeRua;
-            NumeroRua = numeroRua;
-            DescricaoComplemento = descricaoComplemento;
-            BairroID = bairroID;
-            Bairros = bairros;
-            Mulheres = mulheres;
-        }
+        //public Endereco(int enderecoID, int cep, string? nomeRua, int numeroRua, string? descricaoComplemento, int bairroID, Bairro? bairros, List<Mulher>? mulheres)
+        //{
+        //    EnderecoID = enderecoID;
+        //    Cep = cep;
+        //    NomeRua = nomeRua;
+        //    NumeroRua = numeroRua;
+        //    DescricaoComplemento = descricaoComplemento;
+        //    BairroID = bairroID;
+        //    Bairros = bairros;
+        //    Mulheres = mulheres;
+        //}
     }
 }

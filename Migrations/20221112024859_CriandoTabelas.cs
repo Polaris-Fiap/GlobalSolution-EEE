@@ -4,7 +4,7 @@
 
 namespace GlobalSolution_Polaris.Migrations
 {
-    public partial class CriandoTabela : Migration
+    public partial class CriandoTabelas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -73,7 +73,7 @@ namespace GlobalSolution_Polaris.Migrations
                     NomeRua = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     NumeroRua = table.Column<int>(type: "NUMBER(10)", nullable: false),
                     DescricaoComplemento = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    BairroID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    BairroID = table.Column<int>(type: "NUMBER(10)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -82,8 +82,7 @@ namespace GlobalSolution_Polaris.Migrations
                         name: "FK_Enderecos_Bairros_BairroID",
                         column: x => x.BairroID,
                         principalTable: "Bairros",
-                        principalColumn: "BairroID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "BairroID");
                 });
 
             migrationBuilder.CreateTable(
@@ -110,6 +109,27 @@ namespace GlobalSolution_Polaris.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "LocaisEscolhidos",
+                columns: table => new
+                {
+                    LocalEscolhidoID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    Incidente = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    AvaliacaoPerigo = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    MulherID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LocaisEscolhidos", x => x.LocalEscolhidoID);
+                    table.ForeignKey(
+                        name: "FK_LocaisEscolhidos_Mulheres_MulherID",
+                        column: x => x.MulherID,
+                        principalTable: "Mulheres",
+                        principalColumn: "MulherID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Bairros_CidadeID",
                 table: "Bairros",
@@ -126,6 +146,11 @@ namespace GlobalSolution_Polaris.Migrations
                 column: "BairroID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_LocaisEscolhidos_MulherID",
+                table: "LocaisEscolhidos",
+                column: "MulherID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Mulheres_EnderecoID",
                 table: "Mulheres",
                 column: "EnderecoID");
@@ -133,6 +158,9 @@ namespace GlobalSolution_Polaris.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "LocaisEscolhidos");
+
             migrationBuilder.DropTable(
                 name: "Mulheres");
 

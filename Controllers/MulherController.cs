@@ -18,9 +18,9 @@ namespace GlobalSolution_Polaris.Controllers
         }
 
         [HttpGet]
-        public JsonResult ListarMulheres()
+        public List<Mulher> ListarMulheres()
         {
-            return new JsonResult(_repository.Listar());
+            return _repository.Listar();
         }
 
         [HttpGet("{id}")]

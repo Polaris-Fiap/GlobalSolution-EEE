@@ -18,10 +18,13 @@
         //Relacionamento Endereco
         public int EnderecoID { get; set; }
 
-        public virtual Endereco? Endereco { get; set; }
+        public Endereco Endereco { get; set; }
+
+        //Relacionamento com local escolhido
+
+        //public List<LocalEscolhido> Locais { get; set; }
 
 
-        public Mulher () { }
         //public Mulher(int mulherID, string? nome, string? email, string? senha, int cpf, int telefone, int enderecoID, Endereco? endereco)
         //{
         //    MulherID = mulherID;
@@ -33,5 +36,9 @@
         //    EnderecoID = enderecoID;
         //    Endereco = endereco;
         //}
+
+
     }
+
+
 }
